@@ -1,0 +1,244 @@
+\section{Programando o Arduino}
+
+\begin{frame}{Como o código chega ao Arduino?}
+  \begin{center}
+    \Large
+    Código (C/C++)
+    $\;\rightarrow\;$
+    \fbox{\strut Compilador}
+    $\;\xrightarrow{\text{Upload}}\;$
+    \fbox{\strut Arduino}
+  \end{center}
+  \vspace{0.6cm}
+  \begin{itemize}
+    \item Escrevemos o código em linguagem próxima da humana (C/C++)
+    \item O compilador traduz para linguagem de máquina
+    \item A IDE compila o código e envia o programa para a placa (upload)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Piscar LED (Blink)}
+  \begin{block}{Blink}
+    \begin{minted}{cpp}
+void setup() {
+    pinMode(LED_BUILTIN, OUTPUT); // define o pino como saída
+}
+
+void loop() {
+    digitalWrite(LED_BUILTIN, HIGH); // liga o LED
+    delay(1000);            // espera 1 segundo
+
+    digitalWrite(LED_BUILTIN, LOW);  // desliga o LED
+    delay(1000);            // espera 1 segundo
+}
+    \end{minted}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile, allowframebreaks]{Fundamentos da programação no Arduino}
+  \begin{block}{Estrutura principal}
+    \begin{minted}{cpp}
+void setup() {
+    // executa uma vez
+}
+
+void loop() {
+    // executa continuamente
+}
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Principais comandos}
+    \begin{itemize}
+      \item \texttt{pinMode()} → configura o pino
+      \item \texttt{digitalWrite()} → escreve HIGH ou LOW
+      \item \texttt{digitalRead()} → lê o valor do pino
+      \item \texttt{delay()} → pausa o programa
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Tipos de comentários}
+    \begin{minted}{cpp}
+// Comentário de uma linha
+
+/*
+Comentário
+de múltiplas linhas
+*/
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Comunicação Serial}
+    \begin{minted}{cpp}
+Serial.begin(9600);
+Serial.print("Ola ");
+Serial.println("Mundo");
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Diretivas de compilação}
+    \begin{minted}{cpp}
+#define TEMPO 1000
+delay(TEMPO);
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Variáveis}
+    \begin{minted}{cpp}
+// Declaração de variáveis
+int numero = 10;      // número inteiro
+float valor = 3.14;  // número decimal
+bool estado = true;  // verdadeiro ou falso
+char letra = 'A';    // caractere
+
+// Alterando valores
+numero = 20;
+estado = false;
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Operações matemáticas}
+    \begin{minted}{cpp}
+int a = 10;
+int b = 5;
+int soma = a + b;
+int sub = a - b;
+int mult = a * b;
+int div = a / b;
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Operações booleanas}
+    \begin{minted}{cpp}
+a > b;   // maior que
+a < b;   // menor que
+a == b;  // igual a
+a != b;  // diferente de
+a >= b;  // maior ou igual
+a <= b;  // menor ou igual
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Operadores lógicos}
+    \begin{minted}{cpp}
+true && false;  // AND (e)
+true || false;  // OR (ou)
+!true;          // NOT (negação)
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Estrutura condicional (if)}
+    \begin{minted}{cpp}
+int valor = 10;
+
+if (valor > 10) {
+    // maior que 10
+} else if (valor == 10) {
+    // igual a 10
+} else {
+    // menor que 10
+}
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Loops (for e while)}
+    \begin{minted}{cpp}
+// Loop for
+for (int i = 0; i < 5; i++) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(500);
+}
+
+// Loop while
+int contador = 0;
+while (contador < 5) {
+    contador++;
+}
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Funções Digitais}
+    \begin{minted}{cpp}
+// lê o valor digital (HIGH ou LOW) do pino 2
+int estado = digitalRead(2);
+
+// define o pino 13 como nível alto (liga algo, como um LED)
+digitalWrite(13, HIGH);
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Funções Analógicas}
+    \begin{minted}{cpp}
+// lê um valor analógico (0 a 1023) do pino A0
+int valor = analogRead(A0);
+
+// escreve um valor PWM (0 a 255) no pino 9 (controle de intensidade)
+analogWrite(9, 128);
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Funções (sintaxe básica)}
+    \begin{minted}{cpp}
+// Definição de função
+tipoRetorno nomeFuncao(parametros) {
+    // código
+    return valor; // opcional (depende do tipo)
+}
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Exemplos de Funções}
+    \begin{minted}{cpp}
+int soma(int a, int b) {
+    return a + b;
+}
+
+// Função sem retorno
+void piscarLED() {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(500);
+}
+    \end{minted}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{EXTRA: A verdade sobre o código Arduino}
+  \begin{block}{}
+    \begin{minted}{cpp}
+int main(void) {
+  init();
+
+  setup();
+  for (;;) {
+    loop();
+  }
+
+  return 0;
+}
+    \end{minted}
+  \end{block}
+  \vspace{0.3cm}
+  \textbf{Código real:} \url{https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/main.cpp}
+\end{frame}
+
+\begin{frame}{Pode usar o ChatGPT?}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item Descreva bem o que precisa e explique como o circuito está ligado.
+      \item Revise o código gerado antes de usar (o risco é seu, a IA não se responsabiliza por nada).
+      \item Procure entender o que o código faz, não só copiar e colar.
+      \item Use a IA para entender e corrigir os erros que o compilador retornar.
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.7\linewidth]{gpt-meme.jpg}
+      \caption{Quando você só copia e cola...}
+    \end{figure}
+  \end{columns}
+\end{frame}

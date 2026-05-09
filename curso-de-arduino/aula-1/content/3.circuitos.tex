@@ -1,0 +1,175 @@
+\section{Oficina de Circuitos}
+
+\begin{frame}{LED}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item LED significa \textbf{Light Emitting Diode}
+      \item Emite luz quando passa corrente elétrica
+      \item Conduz corrente em \textbf{apenas um sentido}
+      \item Possui dois terminais:
+            \begin{itemize}
+              \item Ânodo (+)
+              \item Cátodo (-)
+            \end{itemize}
+      \item Normalmente é usado com um \textbf{resistor em série}
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=\linewidth]{components/led.png}
+      \caption{LED}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Dimensionamento do LED}
+  \begin{itemize}
+    \item Para proteger o LED, calculamos o resistor em série:
+  \end{itemize}
+  \begin{equation}
+    \displaystyle R = \frac{V_{fonte} - V_{LED}}{I_{LED}}
+  \end{equation}
+  \begin{itemize}
+    \item $V_{fonte}$: tensão da fonte
+    \item $V_{LED}$: queda de tensão do LED (depende da cor)
+    \item $I_{LED}$: corrente desejada (Geralmente 20mA = 0,02A)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Tabela de LEDs}
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+      \textbf{Cor do LED}                           & \textbf{Tensão ($V_{LED}$)} & \textbf{Corrente ($I_{LED}$)} \\ \hline
+
+      \textbf{\textcolor{red}{Vermelho}}            & 1,8V -- 2,0V                & 20 mA                         \\
+      \textbf{\textcolor{orange}{Laranja}}          & 1,8V -- 2,0V                & 20 mA                         \\
+      \textbf{\textcolor{yellow!80!black}{Amarelo}} & 1,8V -- 2,0V                & 20 mA                         \\
+      \textbf{\textcolor{green!60!black}{Verde}}    & 2,0V -- 2,5V                & 20 mA                         \\
+      \textbf{\textcolor{blue}{Azul}}               & 2,5V -- 3,0V                & 20 mA                         \\
+      \textbf{\textcolor{gray}{Branco}}             & 2,5V -- 3,0V                & 20 mA                         \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Resistor}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item Componente utilizado para \textbf{limitar corrente}
+      \item Muito usado para \textbf{proteger LEDs}
+      \item Seu valor é medido em \textbf{ohms ($\Omega$)}
+      \item Resistores possuem um \textbf{código de cores}
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\linewidth]{components/resistors.png}
+      \caption{Resistor}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{table-resistors.png}
+    \caption{Tabela de código de cores de resistores, utilizada para a identificação dos valores de resistência elétrica e suas respectivas tolerâncias.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Questão 3}
+  Deseja-se ligar um LED \textbf{vermelho} em uma fonte de \textbf{9 V}. Qual deve ser o valor do \textbf{resistor em série}?
+  \vspace{1em}
+  \visible<2->{
+    \begin{block}{Resolução}
+      Usamos a fórmula do resistor:
+      $$R = \frac{V_{fonte} - V_{LED}}{I_{LED}}$$
+
+      Substituindo os valores:
+      $$R = \frac{9 - 2}{0{,}02}$$
+
+      $$R = \frac{7}{0{,}02} = 350\ \Omega$$
+    \end{block}
+  }
+\end{frame}
+
+\begin{frame}{Botão}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item Botões são \textbf{interruptores momentâneos}
+      \item Permitem \textbf{abrir ou fechar} um circuito
+      \item Quando pressionado, a corrente passa
+      \item Quando solto, o circuito é interrompido
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.9\linewidth]{components/button.jpg}
+      \caption{Push button}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Protoboard}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{components/protoboard.jpg}
+    \caption{Protoboard (breadboard) aberta. É utilizada para a montagem e teste de circuitos eletrônicos sem a necessidade de solda.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{breadboard_meme.jpg}
+    \caption{Não confunda breadboard com bread board.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Potenciômetro}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item É um \textbf{resistor variável}
+      \item Permite \textbf{ajustar a resistência manualmente}
+      \item Possui \textbf{três terminais}
+      \item Muito usado para \textbf{ajustes} em circuitos
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\linewidth]{components/potentiometer.jpg}
+      \caption{Potenciômetro}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Fotoresistor (LDR)}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item LDR significa \textbf{Light Dependent Resistor}
+      \item É um \textbf{sensor de luz}
+      \item Sua resistência varia com a iluminação
+      \item Mais luz $\rightarrow$ menor resistência
+      \item Menos luz $\rightarrow$ maior resistência
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\linewidth]{components/ldr.jpg}
+      \caption{LDR}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Exemplos de Circuitos no Tinkercad}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{simple-circuits-qrcode.png}
+    \caption{\url{https://www.tinkercad.com/things/jYmcScB7KO2-curso-basico-exemplos}}
+  \end{figure}
+\end{frame}
