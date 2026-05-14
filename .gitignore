@@ -14,3 +14,5 @@ main.pdf
 *.synctex.gz
 *.toc
 *.vrb
+*.bcf
+*.run.xml

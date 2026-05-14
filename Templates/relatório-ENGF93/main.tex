@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\input{style}
+
+\title{Título do Trabalho}
+\author{
+  Autor 1 \\
+  Autor 2 \\
+  Autor 3
+}
+\date{dd de mmmmm de aaaa}
+
+\begin{document}
+
+% CAPA
+\maketitle
+
+% SUMÁRIO
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% CONTEÚDO
+\setcounter{page}{1}
+
+\input{content/1.objetivo}
+\input{content/2.introdução}
+\input{content/3.desenvolvimento}
+\input{content/4.conclusão}
+
+\section{Referências}
+\printbibliography[heading=none]
+
+\end{document}

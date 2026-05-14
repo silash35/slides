@@ -1,0 +1,57 @@
+% Modelo LaTeX para a matéria ENGF93.
+% Desenvolvido por Silas Henrique (silash35@gmail.com),
+% com contribuições de Daniel Diniz Santana (daniel.diniz@ufba.br).
+% Versão 2026.04.13
+
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{amssymb,amsfonts,amsmath}
+
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  left=3cm,
+  right=2cm,
+  top=3cm,
+  bottom=2cm,
+  footskip=0cm
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage[backend=biber,style=abnt]{biblatex}
+\addbibresource{referencias.bib}
+
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    \textbf{UNIVERSIDADE FEDERAL DA BAHIA}\\
+    \textbf{ESCOLA POLITÉCNICA}\\
+    \textbf{ENGENHARIA DE CONTROLE E AUTOMAÇÃO DE PROCESSOS}\\
+    \textbf{ENGF93 – ANÁLISE DE PROCESSOS E SISTEMAS I}
+
+    \vspace{9cm}
+
+    \textbf{\LARGE \@title}
+
+    \vfill
+
+    \begin{flushleft}
+      \@author
+    \end{flushleft}
+
+    \vspace{2cm}
+
+    Salvador, \@date
+  \end{center}
+
+  \thispagestyle{empty}
+  \newpage
+}
+\makeatother
