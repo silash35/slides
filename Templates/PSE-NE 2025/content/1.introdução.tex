@@ -1,0 +1,57 @@
+\section{Introdução}
+
+\begin{frame}{\LaTeX\ Básico}
+  No \LaTeX{} você pode escrever textos normalmente, e o compilador cuida da formatação.
+
+  \vspace{2mm}
+
+  Para enfatizar palavras, use:
+  \begin{itemize}
+    \item \texttt{\textbackslash textbf\{negrito\}} $\rightarrow$ \textbf{negrito}
+    \item \texttt{\textbackslash textit\{itálico\}} $\rightarrow$ \textit{itálico}
+    \item \texttt{\textbackslash underline\{sublinhado\}} $\rightarrow$ \underline{sublinhado}
+  \end{itemize}
+
+  \vspace{4mm}
+
+  E use \texttt{\textbackslash begin\{itemize\}} para criar listas como esta.
+\end{frame}
+
+\begin{frame}{Equações no \LaTeX}
+
+  O \LaTeX{} permite escrever equações matemáticas de forma clara.
+  Por exemplo, uma equação diferencial pode ser escrita como:
+
+  \begin{equation}
+    \diff{h}{t} = \frac{1}{A}\left(q_{\text{in}} - q_{\text{out}}\right)
+    \label{eq:tank}
+  \end{equation}
+
+  \vspace{4mm}
+
+  Também existe suporte para componentes químicos usando o pacote \texttt{mhchem}, permitindo escrever diretamente no texto nomes como \ce{H2O}, \ce{CO2}, \ce{O2} e \ce{CH4}.
+
+  \vspace{2mm}
+
+\end{frame}
+
+\begin{frame}{Citações no \LaTeX}
+
+  Para incluir referências bibliográficas, basta adicionar sua entrada no arquivo \texttt{bibliografia.bib} e citar no texto.
+
+  \vspace{4mm}
+
+  Você pode citar assim:
+
+  De acordo com \citeonline{araujo_2025}, a operação eficiente do gas lift depende de um controle preciso da injeção de gás.
+
+  \vspace{2mm}
+
+  Ou assim:
+
+  A operação eficiente do \textit{gas-lift} depende de um controle preciso da injeção de gás \cite{araujo_2025}.
+
+  \vspace{2mm}
+
+  A seção de bibliografia é gerada automaticamente no final do slide.
+\end{frame}

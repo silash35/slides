@@ -1,0 +1,37 @@
+\documentclass[aspectratio=169]{beamer}
+\input{style.tex}
+
+% Configurações da apresentação
+\title{Exemplo de Título de Trabalho, Escrito com as Palavras Iniciando com Letras Maiúsculas (Title Case)}
+
+\author{Nome do Autor 1, Nome do Autor 2, Nome do Autor 3, ...}
+
+\institute{Instituição dos autores}
+
+\begin{document}
+
+% Configurações do slide de capa
+{
+\setbeamertemplate{footline}{}
+\usebackgroundtemplate{
+  \includegraphics[page=1,width=\paperwidth,height=\paperheight]{background.pdf}
+}
+\maketitle
+}
+
+% Inserindo o conteúdo principal da apresentação
+% O comando \input{arquivo} permite separar o código em vários arquivos.
+% Isso deixa o projeto mais organizado e facilita a manutenção,
+% pois cada seção ou conjunto de slides pode ficar em um arquivo separado.
+\input{content/1.introdução.tex}
+\input{content/2.tabelas-e-figuras.tex}
+
+\begin{frame}{Agradecimentos}
+  \centering \large Escreva aqui os agradecimentos do trabalho. Inclua instituições, agências de fomento, colaboradores ou qualquer apoio recebido.
+\end{frame}
+
+\begin{frame}{Bibliografia}
+  \bibliography{bibliografia.bib}
+\end{frame}
+
+\end{document}

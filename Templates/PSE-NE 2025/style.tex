@@ -1,0 +1,93 @@
+% Modelo LaTeX para o PSE NE 2025.
+% Desenvolvido por Silas Henrique (silash35@gmail.com),
+% com contribuições de Daniel Diniz Santana (daniel.diniz@ufba.br).
+% Versão 1.1.0 (21/11/2025)
+
+% --- Outros Pacotes ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+
+\usepackage{xkeyval}
+
+% --- Pacotes gráficos e matemáticos ---
+\usepackage{amsmath}       % Recursos avançados de matemática
+\usepackage{esdiff}        % Facilita escrita de derivadas (\diff, \pdiff)
+\usepackage[version=4]{mhchem} % Escrever fórmulas químicas e reações
+\usepackage{tikz} % Desenhos
+
+% --- Bibliografia ----
+\usepackage[alf]{abntex2cite}
+% Correção: força tamanho normal nas citações
+%\renewcommand{\cite}[1]{\normalsize\oldcite{#1}}
+%\let\oldcite\cite
+
+% --- Configurações ---
+\usebackgroundtemplate{
+  \includegraphics[page=2,width=\paperwidth,height=\paperheight]{background.pdf}
+} % Plano de fundo
+\usepackage[scaled=0.92]{helvet} % Fonte Helvetica
+
+% --- Cores personalizadas ---
+\definecolor{PSEblue}{HTML}{364971} % azul principal
+\definecolor{PSEgray}{HTML}{757575} % cinza para rodapé e detalhes
+
+% --- Configurações do Beamer ---
+\usetheme{Copenhagen} % Tema geral
+\setbeamertemplate{navigation symbols}{} % remove ícones de navegação
+\setbeamertemplate{headline}{}           % esconde barra de topo
+\setbeamertemplate{caption}[numbered]    % legendas numeradas
+
+\usecolortheme[named=PSEblue]{structure}
+
+\AtBeginSection[]{\frame{\sectionpage}}  % slide automático de seção
+
+% Capa personalizada
+\setbeamertemplate{title page}{
+  \begin{center}
+    \vspace{5mm}
+    {\huge\textbf{\textcolor{PSEblue}{\inserttitle}}}
+
+    \vspace{4mm}
+    \insertauthor
+
+    \vspace{2mm}
+    \insertinstitute
+
+    \vspace{4mm}
+    \insertdate
+  \end{center}
+}
+
+\setbeamertemplate{section page}{
+  \begin{centering}
+    \vfill
+    \begin{beamercolorbox}[rounded=true,shadow=false,center,
+        wd=\textwidth, % largura da caixa
+        sep=10pt,      % espaçamento interno
+        colsep*=1pt,   % espaçamento da borda
+      ]{section title}
+      \usebeamerfont{section title}\insertsection
+    \end{beamercolorbox}
+    \vfill
+  \end{centering}
+}
+
+% Título dos slides
+\setbeamercolor{frametitle}{fg=PSEblue}
+\setbeamerfont{frametitle}{size=\LARGE, series=\bfseries}
+\setbeamertemplate{frametitle}{
+  \vspace{5mm}
+  \hspace{-5mm}
+  \insertframetitle
+  \par
+}
+
+% Rodapé com numeração simples
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1ex,rightskip=0.5cm]{footline}
+    \hfill
+    {\small \color{PSEgray}\insertframenumber{} / \inserttotalframenumber}
+  \end{beamercolorbox}
+  \vspace*{4mm}
+}
